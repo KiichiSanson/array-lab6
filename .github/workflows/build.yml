@@ -1,0 +1,13 @@
+name: Build and test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile
+        run: gcc -Wall -Wextra main.c -o main
+      - name: Run test
+        run: printf "5\n1\n3 7 10 12 8\n3\n" | ./main
