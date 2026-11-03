@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define MAX_N 100
 
@@ -6,9 +8,11 @@ int main(void)
 {
     int a[MAX_N];
     int c[MAX_N];
-    int n, k, i;
+    int n, k, i, mode;
     long long prod = 1;
     int has_nonzero = 0;
+
+    srand((unsigned)time(NULL));
 
     printf("Enter array size (1-%d): ", MAX_N);
     if (scanf("%d", &n) != 1 || n < 1 || n > MAX_N) {
@@ -16,11 +20,23 @@ int main(void)
         return 1;
     }
 
-    printf("Enter %d integers: ", n);
-    for (i = 0; i < n; i++) {
-        if (scanf("%d", &a[i]) != 1) {
-            printf("Error: integer expected.\n");
-            return 1;
+    printf("Fill array: 1 - from keyboard, 2 - random: ");
+    if (scanf("%d", &mode) != 1 || (mode != 1 && mode != 2)) {
+        printf("Error: choose 1 or 2.\n");
+        return 1;
+    }
+
+    if (mode == 1) {
+        printf("Enter %d integers: ", n);
+        for (i = 0; i < n; i++) {
+            if (scanf("%d", &a[i]) != 1) {
+                printf("Error: integer expected.\n");
+                return 1;
+            }
+        }
+    } else {
+        for (i = 0; i < n; i++) {
+            a[i] = rand() % 100;
         }
     }
 
