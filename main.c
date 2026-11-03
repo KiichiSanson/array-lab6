@@ -30,4 +30,28 @@ int main(void)
         return 1;
     }
 
-    for (i = 0; i < N;
+    for (i = 0; i < N; i++) {
+        c[i] = a[i] % k;
+    }
+
+    for (i = 0; i < N; i++) {
+        if (c[i] != 0) {
+            prod *= c[i];
+            has_nonzero = 1;
+        }
+    }
+
+    printf("Array C: ");
+    for (i = 0; i < N; i++) {
+        printf("%d ", c[i]);
+    }
+    printf("\n");
+
+    if (has_nonzero) {
+        printf("Product of nonzero elements of C: %lld\n", prod);
+    } else {
+        printf("All elements of C are zero, product does not exist.\n");
+    }
+
+    return 0;
+}
