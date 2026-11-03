@@ -1,17 +1,31 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-#define N 12
+#define MAX_N 100
 
 int main(void)
 {
-    int a[N] = {17, 8, 23, 40, 5, 12, 31, 9, 26, 14, 7, 30};
-    int c[N];
-    int k, i;
+    int a[MAX_N];
+    int c[MAX_N];
+    int n, k, i;
     long long prod = 1;
     int has_nonzero = 0;
 
+    srand((unsigned)time(NULL));
+
+    printf("Enter array size (1-%d): ", MAX_N);
+    if (scanf("%d", &n) != 1 || n < 1 || n > MAX_N) {
+        printf("Error: invalid size.\n");
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        a[i] = rand() % 100;
+    }
+
     printf("Array A: ");
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
     printf("\n");
@@ -30,11 +44,11 @@ int main(void)
         return 1;
     }
 
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         c[i] = a[i] % k;
     }
 
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         if (c[i] != 0) {
             prod *= c[i];
             has_nonzero = 1;
@@ -42,7 +56,7 @@ int main(void)
     }
 
     printf("Array C: ");
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         printf("%d ", c[i]);
     }
     printf("\n");
