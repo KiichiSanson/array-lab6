@@ -4,6 +4,7 @@
 ![VCS](https://img.shields.io/badge/VCS-Git-orange)
 ![Lab](https://img.shields.io/badge/лабораторна-№6-green)
 ![Branches](https://img.shields.io/badge/гілок-6-purple)
+![Build](https://github.com/KiichiSanson/array-lab6/actions/workflows/build.yml/badge.svg)
 
 > **Основи роботи з Git. Робота з гілками: командна розробка.**
 > Навчальний проєкт: масиви в C та командна робота в GitHub.
@@ -103,10 +104,11 @@ gitGraph
 
 | Учасник | Завдання |
 |---------|----------|
-| Влад Саленко (координатор) | варіант 3, основна програма, гілки, злиття |
-| Артем роїв     |гілка `readme-docs`, опис проєкту в README |
+| Саленко Владислав (координатор) | варіант 3, основна програма, гілки, злиття |
+| Роїв Артем     |гілка `readme-docs`, опис проєкту в README |
 | Сидор Роман    |гілка `code-comments`, коментарі до коду|
 | Петро Руданець |гілка `test-cases`, файл з тестами |
+
 ---
 
 ## 🛠️ Корисні команди Git
