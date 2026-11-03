@@ -1,18 +1,32 @@
 #include <stdio.h>
 
-#define N 12
+#define MAX_N 100
 
 int main(void)
 {
-    int a[N] = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36};
-    int c[N];
-    int k, i;
+    int a[MAX_N];
+    int c[MAX_N];
+    int n, k, i;
     long long prod = 1;
     int has_nonzero = 0;
 
+    printf("Enter array size (1-%d): ", MAX_N);
+    if (scanf("%d", &n) != 1 || n < 1 || n > MAX_N) {
+        printf("Error: invalid size.\n");
+        return 1;
+    }
+
+    printf("Enter %d integers: ", n);
+    for (i = 0; i < n; i++) {
+        if (scanf("%d", &a[i]) != 1) {
+            printf("Error: integer expected.\n");
+            return 1;
+        }
+    }
+
     printf("Array A: ");
     i = 0;
-    while (i < N) {
+    while (i < n) {
         printf("%4d", a[i]);
         i++;
     }
@@ -32,11 +46,11 @@ int main(void)
         return 1;
     }
 
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         c[i] = a[i] % k;
     }
 
-    for (i = 0; i < N; i++) {
+    for (i = 0; i < n; i++) {
         if (c[i] != 0) {
             prod *= c[i];
             has_nonzero = 1;
@@ -45,7 +59,7 @@ int main(void)
 
     printf("Array C: ");
     i = 0;
-    while (i < N) {
+    while (i < n) {
         printf("%4d", c[i]);
         i++;
     }
