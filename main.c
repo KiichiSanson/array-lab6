@@ -11,8 +11,10 @@ int main(void)
     int has_nonzero = 0;
 
     printf("Array A: ");
-    for (i = 0; i < N; i++) {
+    i = 0;
+    while (i < N) {
         printf("%d ", a[i]);
+        i++;
     }
     printf("\n");
 
@@ -42,8 +44,10 @@ int main(void)
     }
 
     printf("Array C: ");
-    for (i = 0; i < N; i++) {
+    i = 0;
+    while (i < N) {
         printf("%d ", c[i]);
+        i++;
     }
     printf("\n");
 
