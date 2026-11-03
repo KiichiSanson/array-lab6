@@ -12,7 +12,7 @@ int main(void)
 
     printf("Array A: ");
     for (i = 0; i < N; i++) {
-        printf("%d ", a[i]);
+        printf("%4d", a[i]);
     }
     printf("\n");
 
@@ -43,7 +43,7 @@ int main(void)
 
     printf("Array C: ");
     for (i = 0; i < N; i++) {
-        printf("%d ", c[i]);
+        printf("%4d", c[i]);
     }
     printf("\n");
 
